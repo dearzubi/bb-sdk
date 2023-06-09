@@ -15,7 +15,7 @@
     "./tests/**/*"
   ],
   "references": [
-    // { "path": "account-abstraction" },
+    { "path": "packages/account-abstraction" },
     // { "path": "common" },
     // { "path": "core-types" },
     // { "path": "ethers-lib" },
