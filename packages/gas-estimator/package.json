@@ -1,0 +1,49 @@
+{
+  "name": "@buckbeak/gas-estimator",
+  "version": "0.1.0",
+  "description": "A library to get gas and gas price estimates for Ethereum transactions.",
+  "keywords": [
+    "erc4337",
+    "account abstraction",
+    "gas"
+  ],
+  "author": "Zubair Khalid <zubairkhalidce@gmail.com>",
+  "homepage": "https://github.com/dearzubi/bb-sdk#readme",
+  "license": "ISC",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "directories": {
+    "dist": "lib",
+    "tests": "dist/tests"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dearzubi/bb-sdk.git"
+  },
+  "scripts": {
+    "unbuild": "rimraf dist",
+    "build": "yarn unbuild && tsc -p tsconfig.build.json",
+    "format:check": "prettier --check \"*/**/*.{js,json,md,ts}\"",
+    "format": "prettier --write \"*/**/*.{js,json,md,ts}\"",
+    "test": "yarn unbuild && tsc && mocha dist/tests/*.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dearzubi/bb-sdk/issues"
+  },
+  "dependencies": {
+    "ethers": "5.7.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "ganache": "^7.8.0",
+    "mocha": "^10.2.0"
+  }
+}
