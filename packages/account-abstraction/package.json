@@ -10,6 +10,10 @@
   "license": "ISC",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
+  "directories": {
+    "dist": "lib",
+    "tests": "dist/tests"
+  },
   "files": [
     "dist"
   ],
@@ -23,12 +27,18 @@
   "scripts": {
     "unbuild": "rimraf dist",
     "build": "yarn unbuild && tsc -p tsconfig.build.json",
-    "build:with:test": "yarn unbuild && tsc",
     "format:check": "prettier --check \"*/**/*.{js,json,md,ts}\"",
     "format": "prettier --write \"*/**/*.{js,json,md,ts}\"",
-    "test": "node ./tests/index.test.js"
+    "test": "yarn unbuild && tsc && mocha dist/tests/*.test.js"
   },
   "bugs": {
     "url": "https://github.com/dearzubi/bb-sdk/issues"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "ganache": "^7.8.0",
+    "mocha": "^10.2.0"
   }
 }
